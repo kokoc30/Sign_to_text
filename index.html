@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASL Caption Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ASL Caption Web App</h1>
+
+    <!-- controls -->
+    <div class="controls">
+      <button id="start" class="primary" aria-label="Start">Start</button>
+      <button id="pause" aria-label="Pause">Pause</button>
+      <button id="resume" aria-label="Resume">Resume</button>
+      <button id="stop" class="danger" aria-label="Stop">Stop</button>
+      <button id="clear" aria-label="Clear captions">Clear</button>
+      <button id="save" class="save" aria-label="Save transcript">Save</button>
+    </div>
+
+    <!-- size control -->
+    <div class="size-control">
+      <label for="captionSize">Caption size:</label>
+      <input type="range" id="captionSize" min="8" max="32" step="2" />
+      <span id="captionSizeLabel">16pt</span>
+    </div>
+
+    <!-- video + captions -->
+    <div class="video-row">
+      <video id="video" playsinline autoplay muted class="video"></video>
+      <div id="captions" class="captions-container"></div>
+    </div>
+  </div>
+
+  <!-- consent modal -->
+  <div id="consent-modal" class="consent-modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Permission Required</h2>
+      <p>
+        To provide live captions, we need to access your camera and microphone.
+        Your media stays on your device and is never uploaded.
+      </p>
+      <div class="modal-actions">
+        <button id="consent-decline">Decline</button>
+        <button id="consent-accept" class="primary">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
